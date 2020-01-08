@@ -1,6 +1,6 @@
 package com._520.ssm.test;
 
-import com._520.ssm.dao.UserDao;
+import com._520.ssm.mapper.UserMapper;
 import com._520.ssm.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -18,8 +18,8 @@ public class MyBatisTest {
         InputStream in = Resources.getResourceAsStream("mybatis.xml");
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
         SqlSession sqlSession = factory.openSession();
-        UserDao mapper = sqlSession.getMapper(UserDao.class);
-        List<User> users = mapper.listAll();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        List<User> users = mapper.selectAll();
         for (User user : users) {
             System.out.println(user);
         }
