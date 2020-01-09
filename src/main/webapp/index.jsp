@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-    <a href="/test1">跳转</a>
+    <a href="/login/test">跳转</a>
 </body>
 </html>
